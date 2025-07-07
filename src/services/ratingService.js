@@ -1,5 +1,3 @@
-
-
 const Doctor = require("../models/doctorModel");
 const Rating = require("../models/ratingModel")
 

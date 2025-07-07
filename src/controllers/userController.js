@@ -1,7 +1,5 @@
 
-const User = require('../models/userModel');
 const {register, login, getAUser, getUsers} = require('../services/userService');
-const validator = require('validator')
 const generateToken = require('../../utils/tokenUtil')
 
 
@@ -32,7 +30,7 @@ const loginUser = async (req, res) => {
       maxAge: 24 * 60 * 60 * 1000,
     });
 
-    res.status(200).json({ message: 'Login successful' });
+    res.status(200).json({ user });
   } catch (err) {
     res.status(401).json({ error: err.message });
   }

@@ -81,10 +81,7 @@ const updateUserProfile = async(req, res)=>{
     await loggedInUser.save()
 
     res.json({message: `${loggedInUser.firstName}, your profile udpated successfully`, data: loggedInUser})
-
 }
-
-
 
 
 module.exports = {

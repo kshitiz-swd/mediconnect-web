@@ -1,6 +1,5 @@
 const Doctor = require("../models/doctorModel")
 
-
 const fetchDoctors = async(specialists)=>{
 
   if (specialists) {
@@ -53,17 +52,18 @@ const fetchDoctorSlotsByDate = async (doctorId, date) => {
   const doctor = await Doctor.findById(doctorId);
   if (!doctor) throw new Error("Doctor not found");
 
-  const dateObj = new Date(date);
-  dateObj.setUTCHours(0, 0, 0, 0);
+  const inputDate = new Date(date);
 
-  const availableDate = doctor.availability.find(slot => {
-    const slotDate = new Date(slot.date); 
-  
-    return slotDate.toDateString() === dateObj.toDateString();
+  const availableDate = doctor.availability.find((slot) => {
+    const slotDate = new Date(slot.date);
+    return slotDate.toDateString() === inputDate.toDateString();
   });
 
   return availableDate?.slots.filter(s => !s.isBooked) || [];
 };
+
+
+
   
 module.exports = {fetchDoctors, createDoctor, editDoctor, fetchDoctorSlotsByDate}
 

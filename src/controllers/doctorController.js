@@ -14,7 +14,7 @@ const getDoctors = async(req, res)=>{
       return res.status(404).json({ message: "No doctors found" });
     }
 
-    res.status(200).json({ "doctors List": doctors });
+    res.status(200).json({ "doctors": doctors });
 
   }catch(err){
     res.status(500).json({ message: "Internal server error" });
@@ -60,6 +60,7 @@ const getDoctorSlotsForDate = async (req, res) => {
     }
 
     const slots = await fetchDoctorSlotsByDate(doctorId, date);
+    console.log(slots)
 
     res.status(200).json({ slots });
   } catch (err) {

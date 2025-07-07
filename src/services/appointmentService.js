@@ -1,7 +1,3 @@
-// A method for booking appointments. This could involve validating the appointment data, 
-// ensuring the doctor is available for the specified date and time, and saving the
-//  appointment details to the database.
-
 const Appointment = require("../models/appointmentModel");
 const Doctor = require("../models/doctorModel");
 
