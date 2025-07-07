@@ -59,9 +59,4 @@ const allAppointment = async (req) => {
 };
 
 
-
 module.exports  = {createAppointment, allAppointment}
-// A method to retrieve an appointment’s details using its ID. This might involve 
-// querying the database with the appointment ID and returning the result.
-
-// You could also consider methods for updating or cancelling appointments, depending on the application’s needs.
