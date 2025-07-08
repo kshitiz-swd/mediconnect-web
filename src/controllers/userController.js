@@ -13,7 +13,7 @@ const registerUser = async (req, res) => {
       maxAge: 24 * 60 * 60 * 1000,
     });
 
-    res.status(201).json({ message: 'Profile created successfully' });
+    res.status(201).json(user);
   } catch (err) {
     res.status(400).json({ error: err.message });
   }
