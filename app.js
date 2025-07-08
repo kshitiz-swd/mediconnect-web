@@ -12,7 +12,7 @@ const cookieParser = require('cookie-parser');
 
 const app = express();
 app.use(cors({
-  origin: ['http://localhost:3000','https://mediconnect-web-xqlf.onrender.com'], 
+  origin: 'http://localhost:3000',
   credentials: true              
 }));
 app.use(bodyParser.json());
@@ -24,7 +24,6 @@ app.use('/api', userRoutes);
 app.use('/api', addressRoutes);
 app.use('/api', appointmentRoutes);
 app.use('/api', doctorRoutes);
-app.use('/api', ratingRoutes);
 app.use('/api', ratingRoutes);
 app.use('/api', aiRoutes);
 app.get('/test', (req, res) => {
