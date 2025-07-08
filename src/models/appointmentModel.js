@@ -28,11 +28,6 @@ const appointmentSchema = new Schema({
   medicalHistory:{
     type : String
   },
-  status: {
-    type: String,
-    enum: ['scheduled', 'cancelled', 'completed'],
-    default: 'scheduled'
-  },
 }, { timestamps: true });
 
 const Appointment = mongoose.model('Appointment', appointmentSchema);

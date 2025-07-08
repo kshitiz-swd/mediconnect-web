@@ -3,7 +3,7 @@ const Doctor = require("../models/doctorModel");
 
   
 const createAppointment = async (req) => {
-  const { doctorId, appointmentDate, status, symptoms, medicalHistory } = req.body;
+  const { doctorId, appointmentDate, symptoms, medicalHistory } = req.body;
   const userId = req.user.id;
 
   if (!doctorId || !appointmentDate) {
@@ -35,7 +35,6 @@ const createAppointment = async (req) => {
     doctorId: doctorId,
     userId: userId,
     appointmentDate: appointmentTime,
-    status: status || "scheduled",
     symptoms,
     medicalHistory,
   });
