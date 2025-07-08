@@ -27,5 +27,9 @@ app.use('/api', doctorRoutes);
 app.use('/api', ratingRoutes);
 app.use('/api', ratingRoutes);
 app.use('/api', aiRoutes);
+app.get('/test', (req, res) => {
+  res.send('Backend is working!');
+});
+
 
 module.exports = app;
