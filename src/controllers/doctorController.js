@@ -8,7 +8,6 @@ const getDoctors = async(req, res)=>{
 
   try{
     const doctors = await fetchDoctors(specialists)
-    console.log(doctors)
 
     if (!doctors || doctors.length === 0) {
       return res.status(404).json({ message: "No doctors found" });
