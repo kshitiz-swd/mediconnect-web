@@ -12,7 +12,7 @@ const cookieParser = require('cookie-parser');
 
 const app = express();
 app.use(cors({
-  origin: ['http://localhost:3000', 'https://mediconnect-fpiijl8d1-kshitijs-projects-5b929cca.vercel.app/'],
+  origin: ['http://localhost:3000', 'https://mediconnect-eight.vercel.app/'],
   credentials: true              
 }));
 app.use(bodyParser.json());
